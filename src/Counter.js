@@ -13,15 +13,15 @@ const buttonStyle = {
 }
 
 class Counter extends Component {
-  state = {
-    number: 0
-  }
+
   addOne = () => {
     this.props.dispatch({ type: 'ADD_ONE' });
   }
+
   minusOne = () => {
     this.props.dispatch({ type: 'MINUS_ONE' });
   }
+
 render() {
     return (
       <div className="App" >
@@ -36,9 +36,11 @@ render() {
     );
   }
 }
+
 const mapStateToProps = (state) => {
     return {
       number: state.number
     };
 }
+
 export default connect(mapStateToProps)(Counter);
